@@ -24,7 +24,7 @@
     let minuta2 = 0
     let godzina = 0
     let res = document.getElementById("res")
-    res.innerHTML = dzien2+dzien+":"+godzina2+godzina+":"+minuta2+minuta+":"+sekunda2+sekunda
+    res.innerHTML = godzina+":"+minuta2+minuta+":"+sekunda2+sekunda
     function start(){
         function przelicz(){
             let res = document.getElementById("res")
@@ -51,7 +51,7 @@
         }   
         
         
-        const interval = setInterval(przelicz,100)  
+        const interval = setInterval(przelicz,1000)  
     }
     
 </script>
