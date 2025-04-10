@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stoper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>STOPER</h1>
+        <p id="res"></p>
+        <div id="guz" onclick="start()">START</div>
+        
+        
+        
+
+    </main>
+</body>
+<script>
+    let sekunda = 0
+    let sekunda2 = 0
+    let minuta = 0
+    let minuta2 = 0
+    let godzina = 0
+    let res = document.getElementById("res")
+    res.innerHTML = dzien2+dzien+":"+godzina2+godzina+":"+minuta2+minuta+":"+sekunda2+sekunda
+    function start(){
+        function przelicz(){
+            let res = document.getElementById("res")
+            res.innerHTML = godzina+":"+minuta2+minuta+":"+sekunda2+sekunda
+            sekunda +=1
+
+            if (sekunda == 10){
+                sekunda = 0
+                sekunda2+=1
+            }
+            if (sekunda2 == 6){
+                sekunda2=0
+                minuta+=1
+            }
+            if (minuta == 10){
+                minuta=0
+                minuta2+=1
+            }
+            if (minuta2 == 6){
+                minuta2=0
+                godzina+=1
+            }
+
+        }   
+        
+        
+        const interval = setInterval(przelicz,100)  
+    }
+    
+</script>
+</html>
