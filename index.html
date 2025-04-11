@@ -10,7 +10,12 @@
     <main>
         <h1>STOPER</h1>
         <p id="res"></p>
-        <div id="guz" onclick="start()">START</div>
+        <div id="guziki">
+            <div id="guz" onclick="start()">START</div><br>
+            <div id="guz" onclick="stoper()">STOP</div><br>
+            <div id="guz" onclick="reset()">RESET</div>
+        </div>
+        
         
         
         
@@ -23,10 +28,27 @@
     let minuta = 0
     let minuta2 = 0
     let godzina = 0
+    let tryb =false 
     let res = document.getElementById("res")
     res.innerHTML = godzina+":"+minuta2+minuta+":"+sekunda2+sekunda
+    let interval_id
+    
     function start(){
-        function przelicz(){
+        interval_id = setInterval(przelicz,100)
+    }
+    function stoper(){
+        clearInterval(interval_id)
+    }
+    function reset(){
+        sekunda = 0
+        sekunda2 = 0
+        minuta = 0
+        minuta2 = 0
+        godzina = 0
+        res.innerHTML = godzina+":"+minuta2+minuta+":"+sekunda2+sekunda
+    }
+    
+    function przelicz(){
             let res = document.getElementById("res")
             res.innerHTML = godzina+":"+minuta2+minuta+":"+sekunda2+sekunda
             sekunda +=1
@@ -46,13 +68,10 @@
             if (minuta2 == 6){
                 minuta2=0
                 godzina+=1
-            }
-
-        }   
-        
-        
-        const interval = setInterval(przelicz,1000)  
-    }
+            }}
+    
+      
+    
     
 </script>
 </html>

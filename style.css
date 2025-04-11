@@ -1,0 +1,87 @@
+body{
+    background-color: #1A1A1D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+main{
+    position: relative;
+    background-color: hsl(240, 4%, 15%);
+    margin-top: 200px;
+    width: 600px;
+    height: 700px;
+    border-radius: 30px;
+    text-align: center;
+    
+    
+    
+}
+
+main::before{
+    content: "";
+    position: absolute;
+    background: linear-gradient(45deg ,red ,blue,red ,blue,red ,blue,red ,blue);
+    width: 102%;
+    height: 102%;
+    z-index: -1;
+    border-radius: 30px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-size: 600% ;
+    filter: blur(8px);
+    animation: koko 60s infinite;
+    
+}
+@keyframes koko {
+    from {
+       background-position: 0% 0  ;
+    }
+    to{
+        background-position: 600% 0  ;
+    }
+}   
+#guziki{
+    transform: translate(-50%,-50%);
+    left: 50%;
+    right: 50%;
+    bottom: 10px; 
+    position: absolute;
+}
+#guz{
+    background-color: hsl(240, 4%, 15%);
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+    box-shadow: 2px 2px 8px hsl(240, 3%, 6%),-2px -2px 5px hsl(240, 3%, 29%);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+#guz:active{
+    
+    
+    box-shadow:inset -2px -2px 5px hsl(240, 3%, 29%),inset 2px 2px 8px hsl(240, 3%, 6%);
+}
+p{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    font-size: 150px;
+}
+@media screen and (max-width: 479px) {
+    main{
+        position: relative;
+        background-color: hsl(240, 4%, 15%);
+        margin-top: 200px;
+        width: 300px;
+        height: 400px;
+        border-radius: 30px;
+        text-align: center;
+        
+        
+        
+    }
+    
+}
