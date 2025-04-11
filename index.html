@@ -28,16 +28,22 @@
     let minuta = 0
     let minuta2 = 0
     let godzina = 0
-    let tryb =false 
+    let tryb = 0
     let res = document.getElementById("res")
     res.innerHTML = godzina+":"+minuta2+minuta+":"+sekunda2+sekunda
     let interval_id
     
     function start(){
-        interval_id = setInterval(przelicz,100)
+        if(tryb == 0){
+            interval_id = setInterval(przelicz,1000)
+            tryb += 1
+        }
     }
     function stoper(){
-        clearInterval(interval_id)
+        if(tryb == 1){
+            clearInterval(interval_id)
+            tryb -= 1
+        }
     }
     function reset(){
         sekunda = 0
