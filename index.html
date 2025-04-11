@@ -35,12 +35,15 @@
     
     function start(){
         if(tryb == 0){
+            sekunda +=1
+            res.innerHTML = godzina+":"+minuta2+minuta+":"+sekunda2+sekunda
             interval_id = setInterval(przelicz,1000)
             tryb += 1
         }
     }
     function stoper(){
         if(tryb == 1){
+            
             clearInterval(interval_id)
             tryb -= 1
         }
